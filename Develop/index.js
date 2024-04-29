@@ -1,59 +1,62 @@
-// TODO: Include packages needed for this application
+
+const fs = require('fs')
+const path = require('path')
 const inquirer = require("inquirer");
-// TODO: Create an array of questions for user input
-inquirer
-    .prompt([
-        {
-            type: "input",
-            message: "What is your project called?",
-            name: "projectName",
-        },
-        {
-            type: "input",
-            message: "Provide a short description of your project",
-            name: "description",
-        },
-        {
-            type: "input",
-            message: "Installation instructions? Type N/A if none.",
-            name: "installation",
-        },
-        {
-            type: "input",
-            message: "Usage information? Type N/A if none.",
-            name: "usage",
-        },
-        {
-            type: "input",
-            message: "Any contributors? Type N/A if none.",
-            name: "contributors",
-        },
-        {
-            type: "input",
-            message: "What is your GitHub username?",
-            name: "github",
-        },
-        {
-            type: "input",
-            message: "What is your email?",
-            name: "email",
-        },
-        {
-            type: "list",
-            message: "What license is your project under?",
-            name: "license",
-            choices: ["MIT", "BSD 2", "BSD 3", "Apache License 2.0", "ISC",]
-        },
+const generateMarkdown = require('./utils/generateMarkdown.js')
 
-    ])
-    .then((response) =>
-        console.log(response)
-    )
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) { }
+const questions = [
+    {
+        type: "input",
+        message: "What is your project called?",
+        name: "title",
+    },
+    {
+        type: "input",
+        message: "Provide a short description of your project",
+        name: "description",
+    },
+    {
+        type: "input",
+        message: "Installation instructions? Type N/A if none.",
+        name: "installation",
+    },
+    {
+        type: "input",
+        message: "Usage information? Type N/A if none.",
+        name: "usage",
+    },
+    {
+        type: "input",
+        message: "Any contributors? Type N/A if none.",
+        name: "contributors",
+    },
+    {
+        type: "input",
+        message: "What is your GitHub username?",
+        name: "github",
+    },
+    {
+        type: "input",
+        message: "What is your email?",
+        name: "email",
+    },
+    {
+        type: "list",
+        message: "What license is your project under?",
+        name: "license",
+        choices: ["MIT", "BSD2", "BSD3", "APACHE2.0", "ISC", "none"]
+    },
+]
 
-// TODO: Create a function to initialize app
-function init() { }
+function writeToFile(fileName, data) {
+    return fs.writeFileSync(path.join(process.cwd(), fileName), data)
+}
 
-// Function call to initialize app
+function init() {
+    inquirer.prompt(questions).then((responses) => {
+        console.log('Generating README.md file....')
+        writeToFile('/README.md', generateMarkdown({ ...responses }))
+    })
+}
+
 init();
