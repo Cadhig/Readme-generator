@@ -46,6 +46,12 @@ const questions = [
         name: "license",
         choices: ["MIT", "BSD2", "BSD3", "APACHE2.0", "ISC", "none"]
     },
+    {
+        type: "input",
+        message: "What year did you make your project?",
+        name: "year"
+    },
+
 ]
 
 function writeToFile(fileName, data) {

@@ -1,22 +1,28 @@
-# asdasda
-![license](https://img.shields.io/badge/license-BSD2-blue.svg)
+# Super awesome project
+![license](https://img.shields.io/badge/license-MIT-blue.svg)
 ## Description
-dadad
+this project is so super duper coolio
 ## Table of Contents
-*[Installation] (#installation)
-*[Usage](#usage)
-*[Contributors](#contributors)
-*[License](#license)
-*[Contact](#contact)
+
+-[Installation] (#installation)
+
+-[Usage](#usage)
+
+-[Contributors](#contributors)
+
+-[License](#license)
+
+-[Contact](#contact)
 
 ## Installation
-ad
+install this by doing this thing
 ## How to Use this App
-ada
+use node to go into the terminal and call the file and answer the questions
 ## Contributors
-d
-ad
+N/A
+cadhig
 ## Contact
-ad
+cadencehiggins@gmail.com
 ## License
-BSD2
+This project is licensed under the MIT License
+© 2024 MIT

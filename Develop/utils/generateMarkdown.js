@@ -20,11 +20,16 @@ ${renderLicenseBadge(data.license)}
 ## Description
 ${data.description}
 ## Table of Contents
-*[Installation] (#installation)
-*[Usage](#usage)
-*[Contributors](#contributors)
-*[License](#license)
-*[Contact](#contact)
+
+-[Installation] (#installation)
+
+-[Usage](#usage)
+
+-[Contributors](#contributors)
+
+-[License](#license)
+
+-[Contact](#contact)
 
 ## Installation
 ${data.installation}
@@ -36,7 +41,8 @@ ${data.github}
 ## Contact
 ${data.email}
 ## License
-${data.license}
+This project is licensed under the ${data.license} License
+© ${data.year} ${data.license}
 `;
 }
 
